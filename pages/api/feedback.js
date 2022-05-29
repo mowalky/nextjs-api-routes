@@ -28,6 +28,6 @@ export default function handler(req, res) {
   } else {
     const filePath = buildFeedbackPath();
     const data = extractFeedback(filePath);
-    res.status(200).json({ feed: data });
+    res.status(200).json(data);
   }
 }
