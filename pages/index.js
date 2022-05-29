@@ -19,7 +19,9 @@ function HomePage() {
         email: enteredEmail,
         text: enteredFeedback,
       }),
-    });
+    })
+      .then((response) => response.json())
+      .then((results) => console.log(results.message));
   }
 
   return (
