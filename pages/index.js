@@ -23,7 +23,7 @@ function HomePage() {
       }),
     })
       .then((response) => response.json())
-      .then((results) => console.log(results.message));
+      .then(() => loadFeedbackHandler());
   }
 
   function loadFeedbackHandler() {
@@ -48,10 +48,11 @@ function HomePage() {
       </form>
       <hr />
       <button onClick={loadFeedbackHandler}>Load Feedback</button>
-
-      {feedbackItems.map((f) => (
-        <li key={f.id}>{f.text}</li>
-      ))}
+      <ul>
+        {feedbackItems.map((f) => (
+          <li key={f.id}>{f.text}</li>
+        ))}
+      </ul>
     </div>
   );
 }
